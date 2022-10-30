@@ -7,9 +7,10 @@ import Carousel from "./components/carousel/Carousel";
 import Trending from "./components/Trending/Trending";
 import Footer from "./include/footer/Footer";
 import TrendingTV from "./components/Trending/TrendingTV";
-import "../node_modules/flowbite/dist/flowbite";
+import { flowbitToFun } from "./api/flowbiteToFun";
 
 export default function App() {
+  flowbitToFun("../node_modules/flowbite/dist/flowbite");
   return (
     <div className="bg-slate-800 min-h-screen">
       <header>

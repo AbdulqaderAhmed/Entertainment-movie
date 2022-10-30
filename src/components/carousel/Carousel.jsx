@@ -48,6 +48,17 @@ export default function Carousel() {
                         alt={item.title}
                       />
                     </div>
+                    <div className="top-0 pl-1 fixed">
+                      <p
+                        className={`bg-white p-1 ${
+                          (item.vote_average / 1).toFixed(1) <= 6
+                            ? "text-red-700"
+                            : "text-green-700"
+                        } text-md font-extrabold rounded-full w-8 h-8 `}
+                      >
+                        {(item.vote_average / 1).toFixed(1)}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
