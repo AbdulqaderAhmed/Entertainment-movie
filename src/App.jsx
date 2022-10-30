@@ -10,7 +10,6 @@ import TrendingTV from "./components/Trending/TrendingTV";
 import { flowbitToFun } from "./api/flowbiteToFun";
 
 export default function App() {
-  flowbitToFun("../node_modules/flowbite/dist/flowbite");
   return (
     <div className="bg-slate-800 min-h-screen">
       <header>
@@ -29,6 +28,7 @@ export default function App() {
       <footer>
         <Footer />
       </footer>
+      {flowbitToFun("../node_modules/flowbite/dist/flowbite.js")}
     </div>
   );
 }
