@@ -8,6 +8,7 @@ import Trending from "./components/Trending/Trending";
 import Footer from "./include/footer/Footer";
 import TrendingTV from "./components/Trending/TrendingTV";
 import { flowbitToFun } from "./api/flowbiteToFun";
+import Detail from "./include/modal/Detail";
 
 export default function App() {
   return (
@@ -28,7 +29,7 @@ export default function App() {
       <footer>
         <Footer />
       </footer>
-      {flowbitToFun("../node_modules/flowbite/dist/flowbite.js")}
+      {flowbitToFun("../node_modules/flowbite/dist/flowbite")}
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { APIKEY, imageURL } from "../../api/apikey";
 import { HTTP } from "../../api/http";
 import Slider from "react-slick";
+import Detail from "../../include/modal/Detail";
 
 export default function TrendingTV() {
   const [data, setData] = useState([]);
@@ -46,9 +47,7 @@ export default function TrendingTV() {
   };
 
   const fetchTrending = async () => {
-    const res = await HTTP.get(
-      `trending/tv/${dayT ? "day" : "week"}?api_key=${APIKEY}`
-    );
+    const res = await HTTP.get(`trending/tv/week?api_key=${APIKEY}`);
     setData(res.data.results);
     console.log(data);
   };
@@ -72,13 +71,13 @@ export default function TrendingTV() {
                 key={index}
                 className="w-52 bg-slate-900 rounded-lg border border-gray-200 shadow-md hover:scale-110 ease-linear duration-500 dark:bg-gray-800 dark:border-gray-700"
               >
-                <a href="#">
+                <button data-modaltoggle="defaultModal">
                   <img
                     className="rounded-t-lg"
                     src={imageURL + item.poster_path}
                     alt={item.title}
                   />
-                </a>
+                </button>
                 <div className="top-2 pl-1 fixed">
                   <p
                     className={`bg-white p-1 ${
@@ -90,6 +89,9 @@ export default function TrendingTV() {
                     {(item.vote_average / 1).toFixed(1)}
                   </p>
                 </div>
+
+                {/* <!-- Main modal --> */}
+                <Detail data={item} />
               </div>
             );
           })}
