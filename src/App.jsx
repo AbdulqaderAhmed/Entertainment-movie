@@ -17,7 +17,7 @@ export default function App() {
         <Header />
       </header>
 
-      <main>
+      <main className="">
         <Carousel />
         <div className="px-10 py-10">
           <Trending />

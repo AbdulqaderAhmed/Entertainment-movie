@@ -16,7 +16,7 @@ export default function TrendingTV() {
     autoplaySpeed: 4000,
     speed: 500,
     slidesToShow: 7,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1024,
